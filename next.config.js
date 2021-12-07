@@ -28,6 +28,7 @@ const withTM = require("next-transpile-modules")([
   "@react-spectrum/searchfield",
   "@react-spectrum/statuslight",
   "@react-spectrum/switch",
+  "@react-spectrum/table",
   "@react-spectrum/tabs",
   "@react-spectrum/text",
   "@react-spectrum/textfield",
