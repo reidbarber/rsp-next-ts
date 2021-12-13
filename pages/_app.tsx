@@ -1,17 +1,16 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { SSRProvider, Provider, lightTheme, ActionButton, Flex, View } from '@adobe/react-spectrum'
+import { ColorScheme } from '@react-types/provider';
 import { useState } from 'react';
 import Moon from '@spectrum-icons/workflow/Moon';
 import Light from '@spectrum-icons/workflow/Light';
 
-type ThemeOption = 'light' | 'dark';
-
 function MyApp({ Component, pageProps }: AppProps) {
-  const [theme, setTheme] = useState<ThemeOption>('light');
+  const [theme, setTheme] = useState<ColorScheme>('light');
 
   let themeIcons = {'dark': <Moon />, 'light': <Light />}
-  let otherTheme: ThemeOption = theme === 'light' ? 'dark' : 'light';
+  let otherTheme: ColorScheme = theme === 'light' ? 'dark' : 'light';
 
   return (
     <SSRProvider>
