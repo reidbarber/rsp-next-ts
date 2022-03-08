@@ -6,6 +6,7 @@ const withTM = require("next-transpile-modules")([
   "@react-spectrum/buttongroup",
   "@react-spectrum/checkbox",
   "@react-spectrum/combobox",
+  "@react-spectrum/contextualhelp",
   "@react-spectrum/dialog",
   "@react-spectrum/divider",
   "@react-spectrum/form",
@@ -40,6 +41,7 @@ const withTM = require("next-transpile-modules")([
   "@react-spectrum/well",
   "@spectrum-icons/ui",
   "@spectrum-icons/workflow",
+  "@spectrum-icons/workflow/node_modules/@react-spectrum/icon",
 ]);
 
 module.exports = withTM({});
