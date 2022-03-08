@@ -8,13 +8,6 @@ import { ActionMenu, Item, Menu, MenuTrigger } from '@react-spectrum/menu';
 
 export default function Home() {
 
-  // let components = [
-  //   {id: 'ActionButton', render: <ActionButton>Test</ActionButton>},
-  //   {id: 'Button', render: <Button variant="primary">Test</Button>},
-  // ];
-  
-  //let [component, setComponent] = React.useState(components[0].id);
-
   return (
     <div className={styles.container}>
       <Head>
