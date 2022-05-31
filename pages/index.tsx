@@ -1,10 +1,10 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import React from 'react';
-import { ActionButton, Breadcrumbs, Button, ButtonGroup, Cell, Checkbox, CheckboxGroup, Column, Divider, Flex, Form, Heading, Link, ListBox, LogicButton, NumberField, Radio, RadioGroup, Row, SearchField, Switch, TableBody, TableHeader, TableView, TabList, TabPanels, Tabs, Text, TextArea, TextField, ToggleButton } from '@adobe/react-spectrum';
+import React, { useState } from 'react';
+import { Picker, ActionButton, Breadcrumbs, Button, ButtonGroup, Cell, Checkbox, CheckboxGroup, Column, Divider, Flex, Form, Heading, Image, Link, ListBox, LogicButton, NumberField, Radio, RadioGroup, Row, SearchField, Switch, TableBody, TableHeader, TableView, TabList, TabPanels, Tabs, Text, TextArea, TextField, ToggleButton, DialogTrigger, AlertDialog, ContextualHelp, Content, Dialog, Header, TooltipTrigger, Tooltip, ComboBox, RangeSlider, Slider, Meter, ProgressBar, ProgressCircle, StatusLight, Footer, IllustratedMessage, Keyboard, View, Well } from '@adobe/react-spectrum';
 import Edit from '@spectrum-icons/workflow/Edit';
 import { ActionMenu, Item, Menu, MenuTrigger } from '@react-spectrum/menu';
+import NotFound from '@spectrum-icons/illustrations/NotFound';
 
 export default function Home() {
 
@@ -25,6 +25,12 @@ export default function Home() {
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>
         </p>
+
+        <Picker label="Choose frequency">
+          <Item key="rarely">Rarely</Item>
+          <Item key="sometimes">Sometimes</Item>
+          <Item key="always">Always</Item>
+        </Picker>
 
         <Flex direction="column" gap="size-125">
           <Heading level={2}>Buttons</Heading>
@@ -166,7 +172,146 @@ export default function Home() {
             </Item>
           </TabPanels>
         </Tabs>
-      
+
+        <Heading level={2}>Overlays</Heading>
+        <Divider />
+
+        <DialogTrigger>
+          <ActionButton>Save</ActionButton>
+          <AlertDialog
+            title="Low Disk Space"
+            variant="warning"
+            primaryActionLabel="Confirm">
+            You are running low on disk space.
+            Delete unnecessary files to free up space.
+          </AlertDialog>
+        </DialogTrigger>
+
+        <ContextualHelp variant="info">
+          <Heading>Need help?</Heading>
+          <Content>
+            <Text>
+              If you are having issues accessing your account, contact our customer
+              support team for help.
+            </Text>
+          </Content>
+        </ContextualHelp>
+
+        <DialogTrigger>
+          <ActionButton>Check connectivity</ActionButton>
+          {(close) => (
+            <Dialog>
+              <Heading>Internet Speed Test</Heading>
+              <Header>Connection status: Connected</Header>
+              <Divider />
+              <Content>
+                <Text>
+                  Start speed test?
+                </Text>
+              </Content>
+              <ButtonGroup>
+                <Button variant="secondary" onPress={close}>Cancel</Button>
+                <Button variant="cta" onPress={close}>Confirm</Button>
+              </ButtonGroup>
+            </Dialog>
+          )}
+        </DialogTrigger>
+
+        <DialogTrigger type="popover">
+          <ActionButton>Disk Status</ActionButton>
+          <Dialog>
+            <Heading>C://</Heading>
+            <Divider />
+            <Content>
+              <Text>
+                50% disk space remaining.
+              </Text>
+            </Content>
+          </Dialog>
+        </DialogTrigger>
+
+        <TooltipTrigger>
+          <ActionButton aria-label="Edit Name"><Edit /></ActionButton>
+          <Tooltip>Change Name</Tooltip>
+        </TooltipTrigger>
+
+        <Heading level={2}>Pickers</Heading>
+        <Divider />
+
+        <ComboBox label="Favorite Animal">
+          <Item key="red panda">Red Panda</Item>
+          <Item key="cat">Cat</Item>
+          <Item key="dog">Dog</Item>
+          <Item key="aardvark">Aardvark</Item>
+          <Item key="kangaroo">Kangaroo</Item>
+          <Item key="snake">Snake</Item>
+        </ComboBox>
+
+        <Picker label="Choose frequency">
+          <Item key="rarely">Rarely</Item>
+          <Item key="sometimes">Sometimes</Item>
+          <Item key="always">Always</Item>
+        </Picker>
+
+        <Heading level={2}>Sliders</Heading>
+        <Divider />    
+
+        <RangeSlider label="Range" defaultValue={{ start: 12, end: 36 }} />
+
+        <Slider label="Cookies to buy" defaultValue={12} />
+
+        <Heading level={2}>Status</Heading>
+        <Divider />   
+
+        <Meter label="Storage space" variant="positive" value={35} />
+
+        <ProgressBar label="Loading…" value={50} />
+
+        <ProgressCircle aria-label="Loading…" value={50} />
+
+        <StatusLight variant="positive">Ready</StatusLight>
+
+        <Heading level={2}>Content</Heading>
+        <Divider />   
+
+        <Content>Content is king</Content>
+
+        <Flex direction="column" gap="size-125">
+          <Text>Content above</Text>
+          <Divider />
+          <Text>Content below</Text>
+        </Flex>
+
+        <Footer>&copy; All rights reserved.</Footer>
+
+        <Header>Cute cats</Header>
+
+        <Heading level={4}>Edit</Heading>
+
+        <IllustratedMessage>
+          <NotFound />
+          <Heading>No results</Heading>
+          <Content>Try another search</Content>
+        </IllustratedMessage>
+
+        <Image src="https://i.imgur.com/Z7AzH2c.png" alt="Sky and roof" />
+
+        <Keyboard>⌘V</Keyboard>
+
+        <Text>Paste</Text>
+
+        <View
+          borderWidth="thin"
+          borderColor="dark"
+          borderRadius="medium"
+          padding="size-250">
+          <TextField label="Name" />
+        </View>
+
+        <Well>
+          Better a little which is well done, than a great deal imperfectly.
+        </Well>
+
       </main>
 
       <footer className={styles.footer}>
@@ -175,10 +320,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
+          Powered by Next.js
         </a>
       </footer>
     </div>
