@@ -119,18 +119,18 @@ export default function Home() {
         <Divider />
 
         <Form maxWidth="size-3600">
-            <CheckboxGroup label="Favorite sports">
+          <CheckboxGroup label="Favorite sports">
             <Checkbox value="soccer">Soccer</Checkbox>
             <Checkbox value="baseball">Baseball</Checkbox>
             <Checkbox value="basketball">Basketball</Checkbox>
           </CheckboxGroup>
-         <NumberField label="Width" defaultValue={1024} minValue={0} />
+          <NumberField label="Width" defaultValue={1024} minValue={0} />
           <RadioGroup label="Favorite pet">
             <Radio value="dogs">Dogs</Radio>
             <Radio value="cats">Cats</Radio>
           </RadioGroup>
           <SearchField
-          label="Search"
+            label="Search"
           />
           <Switch>Low power mode</Switch>
           <TextArea label="Description" />
@@ -140,7 +140,7 @@ export default function Home() {
 
         <Heading level={2}>Navigation</Heading>
         <Divider />
-        
+
         <Breadcrumbs>
           <Item key="home">Home</Item>
           <Item key="trendy">Trendy</Item>
@@ -253,14 +253,14 @@ export default function Home() {
         </Picker>
 
         <Heading level={2}>Sliders</Heading>
-        <Divider />    
+        <Divider />
 
         <RangeSlider label="Range" defaultValue={{ start: 12, end: 36 }} />
 
         <Slider label="Cookies to buy" defaultValue={12} />
 
         <Heading level={2}>Status</Heading>
-        <Divider />   
+        <Divider />
 
         <Meter label="Storage space" variant="positive" value={35} />
 
@@ -271,7 +271,7 @@ export default function Home() {
         <StatusLight variant="positive">Ready</StatusLight>
 
         <Heading level={2}>Content</Heading>
-        <Divider />   
+        <Divider />
 
         <Content>Content is king</Content>
 
