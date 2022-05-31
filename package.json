@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@adobe/react-spectrum": "^3.16.4",
+    "@adobe/react-spectrum": "^3.18.0",
     "@spectrum-icons/illustrations": "^3.3.0",
     "@spectrum-icons/workflow": "^4.0.0",
     "next": "^12.1.6",
