@@ -4,9 +4,11 @@ const withTM = require("next-transpile-modules")([
   "@react-spectrum/breadcrumbs",
   "@react-spectrum/button",
   "@react-spectrum/buttongroup",
+  "@react-spectrum/calendar",
   "@react-spectrum/checkbox",
   "@react-spectrum/combobox",
   "@react-spectrum/contextualhelp",
+  "@react-spectrum/datepicker",
   "@react-spectrum/dialog",
   "@react-spectrum/divider",
   "@react-spectrum/form",
@@ -16,6 +18,7 @@ const withTM = require("next-transpile-modules")([
   "@react-spectrum/label",
   "@react-spectrum/layout",
   "@react-spectrum/link",
+  "@react-spectrum/list",
   "@react-spectrum/listbox",
   "@react-spectrum/menu",
   "@react-spectrum/meter",
@@ -39,6 +42,7 @@ const withTM = require("next-transpile-modules")([
   "@react-spectrum/tooltip",
   "@react-spectrum/view",
   "@react-spectrum/well",
+  "@spectrum-icons/illustrations",
   "@spectrum-icons/ui",
   "@spectrum-icons/workflow"
 ]);
